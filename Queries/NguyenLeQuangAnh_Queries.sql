@@ -69,4 +69,10 @@ group by t.status;
 select ins_code, COUNT(*)
 from staff
 group by ins_code
-having COUNT(*) > 3
+having COUNT(*) > 3;
+
+SELECT Degree, COUNT(*) AS Lecturer_Count
+FROM Lecturer
+GROUP BY Degree
+HAVING COUNT(*) > 1
+ORDER BY Lecturer_Count DESC;
