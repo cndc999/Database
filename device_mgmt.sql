@@ -1,14 +1,6 @@
--- =====================================================================
--- University Device Management System
--- DBMS: MySQL 8.x  |  Normalized to 3NF
--- Run order: schema first, then data (FK-safe).
--- =====================================================================
-
-DROP DATABASE IF EXISTS device_mgmt;
 CREATE DATABASE device_mgmt CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE device_mgmt;
 
--- ============================ SCHEMA =================================
 
 CREATE TABLE Institute (
     Ins_Code            VARCHAR(10)  PRIMARY KEY,
@@ -133,7 +125,7 @@ CREATE TABLE Includes (
     FOREIGN KEY (Transactions_ID) REFERENCES Transactions(Transactions_ID)
 );
 
--- ============================= DATA ==================================
+
 
 -- Institute --
 INSERT INTO Institute (Ins_Code, Location, Institute_Name, Establishment_Year) VALUES
