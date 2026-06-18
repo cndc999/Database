@@ -37,7 +37,6 @@ FROM Staff_Office so
 JOIN Staff s ON so.StaffOffice_ID = s.Staff_ID
 ORDER BY s.Name;
 
--- B3. [User Management] Staff together with the institute (school/faculty) they belong to
 SELECT s.Staff_ID, s.Name, i.Institute_Name, i.Location
 FROM Staff s
 JOIN Institute i ON s.Ins_Code = i.Ins_Code
