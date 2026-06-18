@@ -1,7 +1,6 @@
 CREATE DATABASE device_mgmt CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE device_mgmt;
 
-
 CREATE TABLE Institute (
     Ins_Code            VARCHAR(10)  PRIMARY KEY,
     Location            VARCHAR(100),
