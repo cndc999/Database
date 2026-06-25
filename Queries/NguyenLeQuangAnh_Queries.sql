@@ -95,35 +95,9 @@ select d.type, count(*) as borrow_count
 from includes i
 join device d on i.device_id = d.device_id
 group by d.type
-order by borrow_count desc;
+having borrow_count >4;
 
 
 
 
 
-
-
-
-select log_id, fault_description, repair_cost
-from log
-where repair_cost = (select max(repair_cost) from log);
-
-select staff_id, name, ins_code
-from staff
-where staff_id not in (select lecturer_id from lecturer);
-
-select t.status, COUNT(*)
-from lecturer l 
-join transactions t on t.lecturer_id = l.lecturer_id
-group by t.status;
-
-select ins_code, COUNT(*)
-from staff
-group by ins_code
-having COUNT(*) > 3;
-
-SELECT Degree, COUNT(*) AS Lecturer_Count
-FROM Lecturer
-GROUP BY Degree
-HAVING COUNT(*) > 1
-ORDER BY Lecturer_Count DESC;
